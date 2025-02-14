@@ -1,9 +1,9 @@
-# ui_converter.py
+# uitoPy_converter.py
 import os
 from qtpy import uic
 
 
-def convert_UI2PY(ui_dir):
+def uiToPy_converter(ui_dir):
     files = os.listdir(ui_dir)
     ui_files = [f for f in files if f.endswith('.ui')]
 

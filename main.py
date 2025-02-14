@@ -3,10 +3,10 @@
 #
 import sys
 from qtpy import QtWidgets
-from ui_converter import convert_UI2PY  # Import the convert function
+from uiToPy_converter import uiToPy_converter  # Import the convert function
 
 # Call the function to convert .ui files in 'ui1' folder
-convert_UI2PY("ui1")
+uiToPy_converter("ui1")
 
 app = QtWidgets.QApplication(sys.argv)
 
