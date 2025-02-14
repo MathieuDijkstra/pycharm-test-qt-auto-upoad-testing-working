@@ -7,7 +7,7 @@ app = QtWidgets.QApplication(sys.argv)
 
 window1 = QtWidgets.QMainWindow()
 # titel van window
-window1.setWindowTitle("Studierendenverwaltung")
+window1.setWindowTitle("student administratie")
 # maak een button
 button = QtWidgets.QPushButton(window1)
 #
