@@ -87,12 +87,8 @@
 # Dit programma converteert .ui-bestanden (van QT EDITOR ) om tezetten naar .py-bestanden en bouwt een hoofdvenster
 # met een knop die een checkbox togglet. Het programma maakt gebruik van de Qt framework.
 #
-##
-### deze class is zelf gescreven om ui bestanden om te zetten naar python bestanden
-##
 # Importeer de conversiefunctie die .ui-bestanden omzet naar .py-bestanden
-from uiToPy_converter import \
-    uiToPy_converter  # Deze functie zorgt ervoor dat wijzigingen in de UI direct zichtbaar zijn
+from uiToPy_converter import uiToPy_converter  # Deze functie zorgt ervoor dat wijzigingen in de UI direct zichtbaar zijn
 ##
 ### oorspronkelijk programma
 ##
@@ -111,12 +107,9 @@ from qtpy import QtWidgets
 # note import Ui_Widget is de class in form.py!
 from ui1.form import Ui_Widget
 
-
-
 # Maak een QApplication object aan.
 # Dit object beheert de event loop, systeemresources en zorgt ervoor dat de GUI correct functioneert.
 app = QtWidgets.QApplication(sys.argv)
-
 
 # Definieer de MainWindow klasse, die erft van QtWidgets.QMainWindow.
 # Dit zorgt ervoor dat we alle standaard functionaliteiten van een hoofdvenster van Qt erven.
@@ -139,9 +132,20 @@ class MainWindow(QtWidgets.QMainWindow):
         # Verbind de clicked signal van de pushButton met de toggle methode van checkBox_prg.
         # Dit betekent dat wanneer de pushButton wordt aangeklikt, de checkbox van staat verandert.
         self.ui.pushButton.clicked.connect(self.ui.checkBox_prg.toggle)
+        # stuur deze text naar dit lineEdit element
+        self.ui.lineEdit.setText("!!!")
+        #
+        ## als er op
+        #
+        self.ui.buttonReadLine.clicked.connect(self.on_buttonReadLineClick)
+    #
+    # on click function
+    #
+    def on_buttonReadLineClick(self):
+        print("op buttonReadLine geklikt invoer was:" +  self.ui.lineEdit.text() )
 
 
-# Maak een instantie van de MainWindow klasse.
+
 # Dit creëert ons hoofdvenster met de eerder gedefinieerde UI en functionaliteiten.
 window1 = MainWindow()
 
